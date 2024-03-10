@@ -77,4 +77,4 @@ if __name__ == "__main__":
             postTweet(name)
 
     with open("recent.pkl", "wb") as f:
-        pickle.dump(dict_log)
+        pickle.dump(dict_log, f)
