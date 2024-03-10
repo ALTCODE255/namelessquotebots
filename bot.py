@@ -63,13 +63,13 @@ def postTweet(name: str):
 
 if __name__ == "__main__":
     os.chdir(sys.path[0])
-    env_files = glob.glob("*.env")
     try:
         with open("recent.pkl", "rb") as f:
             dict_log = pickle.load(f)
     except FileNotFoundError:
         dict_log = {}
 
+    env_files = glob.glob("*.env")
     for env in env_files:
         name = env.removesuffix(".env")
         if load_dotenv(env, override=True):
