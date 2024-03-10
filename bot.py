@@ -24,7 +24,7 @@ def getRandomTweet(name: str, log: list[str]) -> str:
             all_tweets = re.findall(
                 r"^(?!#.*$)\S.*", f.read().strip("\n"), re.MULTILINE)
     except FileNotFoundError:
-        sys.exit("Source file not found.")
+        sys.exit(f"Source file {name}.txt not found.")
     valid_tweets = [tweet for tweet in all_tweets if tweet not in log]
     random_tweet = random.choice(valid_tweets).replace("\\n", "\n")
     return random_tweet
