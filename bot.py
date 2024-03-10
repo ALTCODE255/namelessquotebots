@@ -10,6 +10,11 @@ from dotenv import load_dotenv
 
 
 def initClient() -> tweepy.Client:
+    env_vars = {"CONSUMER_KEY", "CONSUMER_SECRET",
+                "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET"}
+    if not set(os.environ).issuperset(env_vars):
+        sys.exit("One or more .env variables are missing. Ensure CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, and ACCESS_TOKEN_SECRET are supplied.")
+
     return tweepy.Client(
         consumer_key=os.getenv("CONSUMER_KEY"),
         consumer_secret=os.getenv("CONSUMER_SECRET"),
@@ -24,22 +29,32 @@ def getRandomTweet(name: str, log: list[str]) -> str:
             all_tweets = re.findall(
                 r"^(?!#.*$)\S.*", f.read().strip("\n"), re.MULTILINE)
     except FileNotFoundError:
-        sys.exit(f"Source file {name}.txt not found.")
+        sys.exit(f"Source file '{name}.txt' not found.")
     valid_tweets = [tweet for tweet in all_tweets if tweet not in log]
-    random_tweet = random.choice(valid_tweets).replace("\\n", "\n")
-    return random_tweet
+    if valid_tweets:
+        random_tweet = random.choice(valid_tweets).replace("\\n", "\n")
+        return random_tweet
+    sys.exit(f"Not enough tweets in '{name}.txt'!")
 
 
 def postTweet(name: str):
-    limit = int(os.getenv("STORAGE_THRESHOLD"))
-    log = dict_log.get(name, [None]*limit)
+    limit = os.getenv("STORAGE_THRESHOLD", 12)
+    if not limit.isdigit() or int(limit) < 12:
+        limit = 12
+    log = dict_log.get(name, [None]*int(limit))
 
-    tweet = getRandomTweet(name, log)
-    try:
-        client.create_tweet(text=tweet)
-    except Exception as e:
-        print(e)
-        return
+    while True:
+        tweet = getRandomTweet(name, log)
+        try:
+            client.create_tweet(text=tweet)
+            break
+        except Exception as e:
+            if "duplicate content" in e:
+                continue
+            elif "text is too long" in e:
+                sys.exit(f"'{tweet}' is too long to be posted!")
+            print(e)
+            return
 
     log.pop(0)
     log.append(tweet)
