@@ -31,32 +31,35 @@ def getRandomTweet(name: str, log: list[str]) -> str:
 
 
 def postTweet(name: str):
-    try:
-        with open(name + "_recent.pkl", "rb") as f:
-            log = pickle.load(f)
-    except FileNotFoundError:
-        limit = int(os.getenv("STORAGE_THRESHOLD"))
-        log = [None]*limit
+    limit = int(os.getenv("STORAGE_THRESHOLD"))
+    log = dict_log.get(name, [None]*limit)
 
     tweet = getRandomTweet(name, log)
     try:
-        response = client.create_tweet(text=tweet)
+        client.create_tweet(text=tweet)
     except Exception as e:
         print(e)
         return
 
     log.pop(0)
     log.append(tweet)
-    with open(name + "_recent.pkl", "wb") as f:
-        pickle.dump(log, f)
-    print(response.data["id"])
+    dict_log[name] = log
 
 
 if __name__ == "__main__":
     os.chdir(sys.path[0])
-    env_files = glob.glob("./*.env")
+    env_files = glob.glob("*.env")
+    try:
+        with open("recent.pkl", "rb") as f:
+            dict_log = pickle.load(f)
+    except FileNotFoundError:
+        dict_log = {}
+
     for env in env_files:
         name = env.removesuffix(".env")
         if load_dotenv(env, override=True):
             client = initClient()
             postTweet(name)
+
+    with open("recent.pkl", "wb") as f:
+        pickle.dump(dict_log)
