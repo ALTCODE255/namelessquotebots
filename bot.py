@@ -18,9 +18,9 @@ def getConfig() -> dict:
 
 
 def initClient(credentials: dict[str, str]) -> tweepy.Client:
-    env_vars = {"CONSUMER_KEY", "CONSUMER_SECRET",
-                "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET"}
-    if not set(credentials.keys).issuperset(env_vars):
+    credential_vars = {"CONSUMER_KEY", "CONSUMER_SECRET",
+                       "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET"}
+    if not set(credential_vars).issubset(credentials):
         sys.exit("Incomplete config.json. One or more API keys are missing. Ensure CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, and ACCESS_TOKEN_SECRET are supplied.")
 
     return tweepy.Client(
