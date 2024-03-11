@@ -47,7 +47,7 @@ def getRandomTweet(name: str, log: list[str]) -> str:
 
 def postTweet(name: str, tweepy_client: tweepy.Client) -> str:
     limit = config_dict.get("STORAGE_THRESHOLD", 11)
-    if not limit.isdigit() or int(limit) < 11:
+    if limit < 11:
         limit = 11
     log = dict_log.get(name, [None]*int(limit))
 
