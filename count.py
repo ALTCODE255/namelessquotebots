@@ -10,10 +10,9 @@ def getNumTweets(filename) -> int:
 
 
 if __name__ == "__main__":
-    files = glob.glob("*.txt")
-    files.remove("requirements.txt")
+    files = glob.glob("tweet_src/*.txt")
     for source in files:
         print(
-            f"Number of Quotes in {source}:",
+            f"Number of Quotes in {source.removeprefix('tweet_src\\')}:",
             getNumTweets(source),
         )

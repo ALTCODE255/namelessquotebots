@@ -1,31 +1,53 @@
-import glob
 import os
 import pickle
 import random
 import re
 import sys
+import json
 
 import tweepy
-from dotenv import load_dotenv
 
 
-def initClient() -> tweepy.Client:
+def getConfig() -> dict:
+    try:
+        with open("config.json", "r") as file:
+            data = json.load(file)
+        return data
+    except FileNotFoundError:
+        clean_json = {
+            "STORAGE_THRESHOLD": 11,
+            "BOT_CREDENTIALS": {
+                "tweetsFile": {
+                    "CONSUMER_KEY": "",
+                    "CONSUMER_SECRET": "",
+                    "ACCESS_TOKEN": "",
+                    "ACCESS_TOKEN_SECRET": ""
+                }
+            }
+        }
+        with open("config.json", "w+") as file:
+            json.dump(clean_json, file)
+        sys.exit(
+            "config.json is missing! A clean config.json has been generated for you.")
+
+
+def initClient(credentials: dict[str, str]) -> tweepy.Client:
     env_vars = {"CONSUMER_KEY", "CONSUMER_SECRET",
                 "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET"}
-    if not set(os.environ).issuperset(env_vars):
-        sys.exit("One or more .env variables are missing. Ensure CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, and ACCESS_TOKEN_SECRET are supplied.")
+    if not set(credentials.keys).issuperset(env_vars):
+        sys.exit("Incomplete config.json. One or more API keys are missing. Ensure CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, and ACCESS_TOKEN_SECRET are supplied.")
 
     return tweepy.Client(
-        consumer_key=os.getenv("CONSUMER_KEY"),
-        consumer_secret=os.getenv("CONSUMER_SECRET"),
-        access_token=os.getenv("ACCESS_TOKEN"),
-        access_token_secret=os.getenv("ACCESS_TOKEN_SECRET")
+        consumer_key=credentials["CONSUMER_KEY"],
+        consumer_secret=credentials["CONSUMER_SECRET"],
+        access_token=credentials["ACCESS_TOKEN"],
+        access_token_secret=credentials["ACCESS_TOKEN_SECRET"]
     )
 
 
 def getRandomTweet(name: str, log: list[str]) -> str:
     try:
-        with open(name + ".txt", "r", encoding="utf-8") as f:
+        with open("tweet_src/" + name + ".txt", "r", encoding="utf-8") as f:
             all_tweets = re.findall(
                 r"^(?!#.*$)\S.*", f.read().strip("\n"), re.MULTILINE)
     except FileNotFoundError:
@@ -37,16 +59,19 @@ def getRandomTweet(name: str, log: list[str]) -> str:
     sys.exit(f"Not enough tweets in '{name}.txt'!")
 
 
-def postTweet(name: str):
-    limit = os.getenv("STORAGE_THRESHOLD", 12)
-    if not limit.isdigit() or int(limit) < 12:
-        limit = 12
+def postTweet(name: str, tweepy_client: tweepy.Client) -> str:
+    limit = config_dict.get("STORAGE_THRESHOLD", 11)
+    if not limit.isdigit() or int(limit) < 11:
+        limit = 11
     log = dict_log.get(name, [None]*int(limit))
 
     while True:
         tweet = getRandomTweet(name, log)
         try:
-            client.create_tweet(text=tweet)
+            tweepy_client.create_tweet(text=tweet)
+            log.pop(0)
+            log.append(tweet)
+            dict_log[name] = log
             break
         except Exception as e:
             if "duplicate content" in e:
@@ -55,10 +80,6 @@ def postTweet(name: str):
                 sys.exit(f"'{tweet}' is too long to be posted!")
             print(e)
             return
-
-    log.pop(0)
-    log.append(tweet)
-    dict_log[name] = log
 
 
 if __name__ == "__main__":
@@ -69,12 +90,16 @@ if __name__ == "__main__":
     except FileNotFoundError:
         dict_log = {}
 
-    env_files = glob.glob("*.env")
-    for env in env_files:
-        name = env.removesuffix(".env")
-        if load_dotenv(env, override=True):
-            client = initClient()
-            postTweet(name)
+    config_dict = getConfig()
+    try:
+        credential_dict = config_dict["BOT_CREDENTIALS"]
+    except KeyError:
+        sys.exit(
+            "Incomplete config.json. Please supply at least one set of Twitter API keys.")
+
+    for filename in credential_dict:
+        client = initClient(credential_dict[filename])
+        postTweet(filename, client)
 
     with open("recent.pkl", "wb") as f:
         pickle.dump(dict_log, f)
