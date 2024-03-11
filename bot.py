@@ -33,7 +33,7 @@ def initClient(credentials: dict[str, str]) -> tweepy.Client:
 
 def getRandomTweet(name: str, log: list[str]) -> str:
     try:
-        with open(name + ".txt", "r", encoding="utf-8") as f:
+        with open("tweet_src/" + name + ".txt", "r", encoding="utf-8") as f:
             all_tweets = re.findall(
                 r"^(?!#.*$)\S.*", f.read().strip("\n"), re.MULTILINE)
     except FileNotFoundError:
