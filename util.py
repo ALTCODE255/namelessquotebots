@@ -28,8 +28,7 @@ if __name__ == "__main__":
         files = glob.glob("tweet_src/*.txt")
         for source in files:
             print(
-                f"Number of Tweets in {
-                    source.removeprefix('tweet_src\\')}:",
+                f"Number of Tweets in {source[10:]}:",
                 getNumTweets(source),
             )
     elif len(sys.argv) == 3:
