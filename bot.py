@@ -60,9 +60,9 @@ def postTweet(name: str, tweepy_client: tweepy.Client) -> str:
             dict_log[name] = log
             break
         except Exception as e:
-            if "duplicate content" in e:
+            if "duplicate content" in str(e):
                 continue
-            elif "text is too long" in e:
+            elif "text is too long" in str(e):
                 sys.exit(f"'{tweet}' is too long to be posted!")
             print(e)
             return
