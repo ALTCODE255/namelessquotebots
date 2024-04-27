@@ -88,7 +88,7 @@ if __name__ == "__main__":
         if name not in dict_log:
             dict_log[name] = [None] * min_threshold
 
-        valid_tweets = getValidTweets("tweet_src/"name + ".txt",
+        valid_tweets = getValidTweets("tweet_src/" + name + ".txt",
                                       min_threshold, chr_limit)
         bot = Bot(credential_dict[name], valid_tweets)
         bot.postTweet(dict_log[name])
