@@ -1,23 +1,39 @@
 import re
 import sys
 import glob
+import os
+
+from bot import getConfig
 
 
-def getNumTweets(filename) -> int:
-    return len(getTweets(filename))
+def getNumTweets(filename: str, chr_limit: int) -> int:
+    return len(getTweets(filename, chr_limit))
 
 
-def getTweets(filename) -> list[str]:
+def getTweets(filename: str, chr_limit: int) -> list[str]:
     try:
         with open(filename, "r", encoding="utf-8") as f:
-            all_tweets = re.findall(
-                r"^(?!#.*$)\S.*", f.read().strip("\n"), re.MULTILINE)
+            all_tweets = [
+                tweet.replace("\\n", "\n")
+                for tweet in re.findall(
+                    r"^(?!#.*$)\S.*", f.read().strip("\n"), re.MULTILINE
+                )
+            ]
+        exceeding_tweets = [tweet for tweet in all_tweets if len(tweet) > chr_limit]
+        if exceeding_tweets:
+            print(
+                f"Warning: The following tweets exceed the character limit set ({chr_limit}):\n- "
+                + "\n- ".join(exceeding_tweets)
+            )
         return all_tweets
     except FileNotFoundError:
-        sys.exit(f"Source file '{filename}' not found.")
+        print(f"Source file '{filename}' not found.")
 
 
 if __name__ == "__main__":
+    os.chdir(sys.path[0])
+    config_dict = getConfig()
+    chr_limit = int(config_dict.get("TWEET_CHR_LIMIT", 280))
     if len(sys.argv) == 1 or sys.argv[1] == "help":
         print("Commands:\n\
                   - help - displays this command\n\
@@ -28,7 +44,8 @@ if __name__ == "__main__":
         files = glob.glob("tweet_src/*.txt")
         for source in files:
             print(
-                f"Number of Tweets in {source[10:]}:",
+                f"Number of Tweets in {
+                    source.removeprefix('tweet_src\\')}:",
                 getNumTweets(source),
             )
     elif len(sys.argv) == 3:
