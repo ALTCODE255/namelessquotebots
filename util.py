@@ -46,12 +46,12 @@ if __name__ == "__main__":
             print(
                 f"Number of Tweets in {
                     source.removeprefix('tweet_src\\')}:",
-                getNumTweets(source),
+                getNumTweets(source, chr_limit),
             )
     elif len(sys.argv) == 3:
         if sys.argv[1] == "list":
             print(f"List of Valid Tweets in {sys.argv[2]}.txt:",
-                  getTweets("tweet_src/" + sys.argv[2] + ".txt"))
+                  getTweets("tweet_src/" + sys.argv[2] + ".txt", chr_limit))
         elif sys.argv[1] == "count":
             print(f"Number of Valid Tweets in {sys.argv[2]}.txt:",
-                  getNumTweets("tweet_src/" + sys.argv[2] + ".txt"))
+                  getNumTweets("tweet_src/" + sys.argv[2] + ".txt", chr_limit))
