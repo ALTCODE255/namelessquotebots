@@ -5,6 +5,7 @@ import sys
 import json
 
 from TweetBot import Bot
+from jsonschema import validate, ValidationError
 
 
 def loadRecent() -> dict[str, list[str]]:
@@ -19,6 +20,7 @@ def getConfig() -> dict:
     try:
         with open("config.json", "r") as file:
             data = json.load(file)
+        validateConfig(data)
         return data
     except FileNotFoundError:
         # clean_json = {
@@ -39,13 +41,42 @@ def getConfig() -> dict:
         sys.exit("config.json is missing!")
 
 
-def getCredentials(config: dict) -> dict[str, dict[str, str]]:
+def validateConfig(config: dict):
+    schema = {
+        "type": "object",
+        "properties": {
+            "STORAGE_THRESHOLD": {"type": "integer",
+                                  "minimum": 11,
+                                  "default": 11},
+            "TWEET_CHR_LIMIT": {"type": "integer",
+                                "minimum": 1,
+                                "maximum": 4000,
+                                "default": 280},
+            "BOT_CREDENTIALS": {
+                "type": "object",
+                "patternProperties": {
+                    r"/^\S*$/": {
+                        "type": "object",
+                        "properties": {
+                            "CONSUMER_KEY": {"type": "string"},
+                            "CONSUMER_SECRET": {"type": "string"},
+                            "ACCESS_TOKEN": {"type": "string"},
+                            "ACCESS_TOKEN_SECRET": {"type": "string"}
+                        },
+                        "required": ["CONSUMER_KEY", "CONSUMER_SECRET",
+                                     "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET"]
+                    }
+                }
+            }
+        },
+        "required": ["STORAGE_THRESHOLD", "TWEET_CHR_LIMIT", "BOT_CREDENTIALS"]
+    }
+
     try:
-        return config["BOT_CREDENTIALS"]
-    except KeyError:
-        sys.exit(
-            "Incomplete config.json. Please supply at least one set of Twitter API keys."
-        )
+        validate(instance=config, schema=schema)
+    except ValidationError as e:
+        print(e)
+        sys.exit(1)
 
 
 def getValidTweets(filename: str, threshold: int, chr_limit: int) -> list[str]:
@@ -69,8 +100,9 @@ def getValidTweets(filename: str, threshold: int, chr_limit: int) -> list[str]:
             )
         return all_tweets
     except FileNotFoundError:
+        # default_text = '''# Place tweets here. There should be one tweet per line. If you have 'multi-line' tweets, write "\n" where you want your line breaks to be.\n# The script will ignore any empty lines, as well as lines that are 'commented' out with a "#".\n# It is up to you to ensure that each tweet is at maximum 280 characters long.\n# Please have at minimum 12 tweets in this file.\n# If you need examples, check out https://github.com/ALTCODE255/namelessquotebots/blob/master/tweet_src or https://github.com/ALTCODE255/30music_shuuen/blob/master/music.txt'''
         # with open(filename, "w+") as f:
-        #     f.write('''# Place tweets here. There should be one tweet per line. If you have 'multi-line' tweets, write "\n" where you want your line breaks to be.\n# The script will ignore any empty lines, as well as lines that are 'commented' out with a "#".\n# It is up to you to ensure that each tweet is at maximum 280 characters long.\n# Please have at minimum 12 tweets in this file.\n# If you need examples, check out https://github.com/ALTCODE255/namelessquotebots/blob/master/tweet_src or https://github.com/ALTCODE255/30music_shuuen/blob/master/music.txt''')
+        #     f.write(default_text)
         # sys.exit(f"Source file '{filename}' not found. A clean file has been generated for you.")
         sys.exit(f"Source file '{filename}' not found.")
 
@@ -80,9 +112,9 @@ if __name__ == "__main__":
 
     dict_log = loadRecent()
     config_dict = getConfig()
-    credential_dict = getCredentials(config_dict)
-    chr_limit = int(config_dict.get("TWEET_CHR_LIMIT", 280))
-    min_threshold = max(int(config_dict.get("STORAGE_THRESHOLD", 11)), 11)
+    credential_dict = config_dict["BOT_CREDENTIALS"]
+    chr_limit = config_dict["TWEET_CHR_LIMIT"]
+    min_threshold = config_dict["STORAGE_THRESHOLD"]
 
     for name in credential_dict:
         if name not in dict_log:

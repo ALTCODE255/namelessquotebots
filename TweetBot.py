@@ -1,5 +1,4 @@
 import tweepy
-import sys
 import random
 
 
@@ -9,17 +8,6 @@ class Bot:
         self.tweets = tweets
 
     def initClient(self, credentials: dict[str, str]) -> tweepy.Client:
-        credential_vars = {
-            "CONSUMER_KEY",
-            "CONSUMER_SECRET",
-            "ACCESS_TOKEN",
-            "ACCESS_TOKEN_SECRET",
-        }
-        if not set(credential_vars).issubset(credentials):
-            sys.exit(
-                "Incomplete config.json. One or more API keys are missing. Ensure CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, and ACCESS_TOKEN_SECRET are supplied."
-            )
-
         return tweepy.Client(
             consumer_key=credentials["CONSUMER_KEY"],
             consumer_secret=credentials["CONSUMER_SECRET"],
