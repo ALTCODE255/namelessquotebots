@@ -46,7 +46,7 @@ def validateConfig(config: dict):
     schema = {
         "type": "object",
         "patternProperties": {
-            r"/^\S*$/": {
+            ".*": {
                 "type": "object",
                 "properties": {
                     "filepath": {"type": "string"},
