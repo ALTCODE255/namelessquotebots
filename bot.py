@@ -16,7 +16,7 @@ def loadRecent() -> dict[str, list[str]]:
         return {}
 
 
-def getConfig() -> dict:
+def loadConfig() -> dict:
     try:
         with open("config.json", "r") as file:
             data = json.load(file)
@@ -24,10 +24,11 @@ def getConfig() -> dict:
         return data
     except FileNotFoundError:
         # clean_json = {
-        #     "STORAGE_THRESHOLD": 11,
-        #     "TWEET_CHR_LIMIT": 280,
-        #     "BOT_CREDENTIALS": {
-        #         "tweetsFile": {
+        #     "anyNameHere": {
+        #         "filepath": "tweet_src/tweetsFile.txt",
+        #         "storage_threshold": 11,
+        #         "tweet_chr_limit": 280,
+        #         "credentials": {
         #             "CONSUMER_KEY": "",
         #             "CONSUMER_SECRET": "",
         #             "ACCESS_TOKEN": "",
@@ -44,18 +45,23 @@ def getConfig() -> dict:
 def validateConfig(config: dict):
     schema = {
         "type": "object",
-        "properties": {
-            "STORAGE_THRESHOLD": {"type": "integer",
-                                  "minimum": 11,
-                                  "default": 11},
-            "TWEET_CHR_LIMIT": {"type": "integer",
-                                "minimum": 1,
-                                "maximum": 4000,
-                                "default": 280},
-            "BOT_CREDENTIALS": {
+        "patternProperties": {
+            r"/^\S*$/": {
                 "type": "object",
-                "patternProperties": {
-                    r"/^\S*$/": {
+                "properties": {
+                    "filepath": {"type": "string"},
+                    "storage_threshold": {
+                        "type": "integer",
+                        "minimum": 11,
+                        "default": 11
+                        },
+                    "tweet_chr_limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 4000,
+                        "default": 280
+                        },
+                    "credentials": {
                         "type": "object",
                         "properties": {
                             "CONSUMER_KEY": {"type": "string"},
@@ -66,10 +72,11 @@ def validateConfig(config: dict):
                         "required": ["CONSUMER_KEY", "CONSUMER_SECRET",
                                      "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET"]
                     }
-                }
+                },
+                "required": ["filepath", "storage_threshold",
+                             "tweet_chr_limit", "credentials"]
             }
-        },
-        "required": ["STORAGE_THRESHOLD", "TWEET_CHR_LIMIT", "BOT_CREDENTIALS"]
+        }
     }
 
     try:
@@ -104,25 +111,24 @@ def getValidTweets(filename: str, threshold: int, chr_limit: int) -> list[str]:
         # with open(filename, "w+") as f:
         #     f.write(default_text)
         # sys.exit(f"Source file '{filename}' not found. A clean file has been generated for you.")
-        sys.exit(f"Source file '{filename}' not found.")
+        sys.exit(f"Source file '{filename}' not found,")
 
 
 if __name__ == "__main__":
     os.chdir(sys.path[0])
 
     dict_log = loadRecent()
-    config_dict = getConfig()
-    credential_dict = config_dict["BOT_CREDENTIALS"]
-    chr_limit = config_dict["TWEET_CHR_LIMIT"]
-    min_threshold = config_dict["STORAGE_THRESHOLD"]
+    config_dict = loadConfig()
 
-    for name in credential_dict:
+    for name in config_dict:
+        config = config_dict[name]
         if name not in dict_log:
-            dict_log[name] = [None] * min_threshold
+            dict_log[name] = [None] * config["storage_threshold"]
 
-        valid_tweets = getValidTweets("tweet_src/" + name + ".txt",
-                                      min_threshold, chr_limit)
-        bot = Bot(credential_dict[name], valid_tweets)
+        valid_tweets = getValidTweets(config["filename"],
+                                      config["storage_threshold"],
+                                      config["tweet_chr_limit"])
+        bot = Bot(config["credentials"], valid_tweets)
         bot.postTweet(dict_log[name])
 
     with open("recent.pkl", "wb") as f:
