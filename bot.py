@@ -125,7 +125,7 @@ if __name__ == "__main__":
         if name not in dict_log:
             dict_log[name] = [None] * config["storage_threshold"]
 
-        valid_tweets = getValidTweets(config["filename"],
+        valid_tweets = getValidTweets(config["filepath"],
                                       config["storage_threshold"],
                                       config["tweet_chr_limit"])
         bot = Bot(config["credentials"], valid_tweets)
