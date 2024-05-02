@@ -1,11 +1,12 @@
+import json
 import os
 import pickle
 import re
 import sys
-import json
+
+from jsonschema import ValidationError, validate
 
 from TweetBot import Bot
-from jsonschema import validate, ValidationError
 
 
 def loadRecent() -> dict[str, list[str]]:
