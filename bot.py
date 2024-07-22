@@ -26,7 +26,7 @@ def loadConfig() -> dict:
     except FileNotFoundError:
         # clean_json = {
         #     "anyNameHere": {
-        #         "filepath": "tweet_src/tweetsFile.txt",
+        #         "filepath": "tweets/tweetsFile.txt",
         #         "storage_threshold": 11,
         #         "tweet_chr_limit": 280,
         #         "credentials": {
@@ -108,7 +108,7 @@ def getValidTweets(filename: str, threshold: int, chr_limit: int) -> list[str]:
             )
         return all_tweets
     except FileNotFoundError:
-        # default_text = '''# Place tweets here. There should be one tweet per line. If you have 'multi-line' tweets, write "\n" where you want your line breaks to be.\n# The script will ignore any empty lines, as well as lines that are 'commented' out with a "#".\n# It is up to you to ensure that each tweet is at maximum 280 characters long.\n# Please have at minimum 12 tweets in this file.\n# If you need examples, check out https://github.com/ALTCODE255/namelessquotebots/blob/master/tweet_src or https://github.com/ALTCODE255/30music_shuuen/blob/master/music.txt'''
+        # default_text = '''# Place tweets here. There should be one tweet per line. If you have 'multi-line' tweets, write "\n" where you want your line breaks to be.\n# The script will ignore any empty lines, as well as lines that are 'commented' out with a "#".\n# It is up to you to ensure that each tweet is at maximum 280 characters long.\n# Please have at minimum 12 tweets in this file.\n# If you need examples, check out https://github.com/ALTCODE255/namelessquotebots/blob/master/tweets or https://github.com/ALTCODE255/30music_shuuen/blob/master/music.txt'''
         # with open(filename, "w+") as f:
         #     f.write(default_text)
         # sys.exit(f"Source file '{filename}' not found. A clean file has been generated for you.")

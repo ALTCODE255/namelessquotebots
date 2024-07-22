@@ -36,11 +36,11 @@ if __name__ == "__main__":
     if len(sys.argv) == 1 or sys.argv[1] == "help":
         print("Commands:\n\
                   - help - displays this command\n\
-                  - countall - counts the number of valid tweets in every source file in tweet_src.\n\
+                  - countall - counts the number of valid tweets in every source file in tweets.\n\
                   - count <file path> - counts the number of valid tweets in a specified text file given a filepath.\n\
                   - list <file path> - displays list of all valid tweets found in a specified text file.")
     elif len(sys.argv) == 2 and sys.argv[1] == "countall":
-        files = glob.glob("tweet_src/*.txt")
+        files = glob.glob("tweets/*.txt")
         for source in files:
             print(
                 "Number of Tweets in", source + ":",
