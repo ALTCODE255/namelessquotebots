@@ -103,8 +103,233 @@ To think I'd get to see you so surprised... Honestly, it's pretty satisfying.
 You're overthinking this. I have no hidden agenda at this point.
 If I had to explain myself, I'd say it's simply personal principle that I repay my debts.
 
+<<<<<<< HEAD
 # P5R Main Story - Third Semester
 ## 01/02
+=======
+# Unorganized P5R Pre-Third Semester
+Checkmate.
+My skills exceed yours!
+Very well, there will be no survivors.
+Don't concern yourself with me― just focus on infiltrating the Palace.
+If the public knew I was working alongside the Phantom Thieves, they'd be absolutely gobsmacked.
+A long time ago, a girl from another class confessed her love for me... Oh, this isn't me bragging by the way. At the time, the only thing on my mind was how exactly I was going to turn her down.
+I'm terrible, aren't I? I think so too. But, I have something that I must do...
+I'm so happy that I'm here talking with you again. Isn't this jazz club nice?
+I like how not a lot of people really know this place... Heh, does that sound like I'm showing off?
+This place is like your home. It's not the greatest, but you still end up feeling so comfortable.
+I enjoy talking with Sae-san. Not only is she smart, but she's upfront. When I tell her that I want to eat at a traditional sushi restaurant, she says, "Only if it's the conveyer belt kind." Someday, I've got to treat Sae-san to some traditional sushi...
+But honestly, regardless of how the food tastes, I think the most important thing is whether or not my wants can be satisfied. So if I want to eat a meat dish, I wouldn't want sashimi...
+Then again, I suppose an adult does need to keep up appearances.
+With trains, your activities are limited to where the stations are, right? But with a bicycle, you can go wherever you want. The only downside would probably be rainy days. I feel so unlucky whenever I get caught in a sudden downpour.
+I'm not a robot or anything—I'm a human, like everyone else. So of course there are times when I get angry.
+Speaking of which, that takoyaki I had at your school festival... it was, um... delicious...
+When I go to school, I never know what to talk to my classmates about. All they want to ask me about is show business...
+It's not that I specifically want to go on TV. It's just that talk shows are convenient for sorting through my own thoughts.
+I must say though... I enjoyed the segment we did in June. It was refreshing to have someone object to my opinion so openly.
+The time I spend with you is so meaningful. Oh, and there's something else I wanted to talk to you about...
+This is a confessional, isn't it? Your sudden summons surprised me, but... Have I done something to offend you?
+...We're going again. You can't let it end like this, can you?
+Welcome home, Amamiya-kun. I hope you don't mind that I'm intruding on your home again.
+...Oh, perhaps I was a little too honest the other day... but it was all true. Let's duel again after this mission. Next time, no holding back.
+You still owe me a duel, too. So we have to make sure we finish that mission.
+I find this place quite calming. I feel as though I can cast off my detective mask and return to my true self when I'm here. It helps that Boss treats me as any other customer as well.
+Ah, sorry to intrude. I simply happened to be passing by, and had an urge to drink a cup of fine coffee here.
+Ah, it's you. My apologies. I was submerged in my thoughts and lost track of the time. I'm sorry for staying here so late. I will be leaving soon.
+You know, I have felt quite fulfilled lately. It is almost surprising to feel such emotion. I suspect that is due to the fact that I have rarely cooperated with like-minded peers in the past.
+Hahaha, you truly are intriguing. Never would I have imagined that you'd give me this sort of gift—though I do admit, my public life does make it a useful one.
+Leading your team this far in search of an infiltration route... You are truly amazing...
+Well, the next round will likely be the final stage. I look forward to our infiltration, Joker.
+To think my presence on the team couldn't provide an adequate counterbalance to this problem...
+Quite a find. Impressive. Perhaps you're more suited to be a detective than a phantom thief.
+You're pairing up with me? I'll do my best not to drag you down.
+You're pairing up with me? I'm flattered. I'll do my best.
+I seem to be making myself at home here once again. It's been hard to find a place of comfort recently.
+
+# P5R Unused Dialogue
+*sigh* Why am I resigned to sneaking around like this?
+Quiet, peasants!
+
+# P5R Thieves Den
+Am I the only sane person here?
+By the way, the real Captain Kidd was publicly executed. They left his body hanging there for years on end.
+Ha. And? It's their fault for being stupid enough to fall for the act.
+He nearly ruined your lives, right? You should have gotten even and taken everything from him... including his life.
+Rather than letting him live out the last few years of his pitiful life, why not put him out of his misery?
+Is that so? Well, you stop feeling things once you get used to it.
+So... It appears you made good on our deal. Don't expect any thanks, though. If you hadn't interfered, everything would've gone exactly as I'd planned.
+No matter the rationale, it doesn't change the fact that he was a rotten piece of shit of a father. Besides, I have no interest in wasting time empathizing with him after all he put me through.
+You worked so hard for the sake of others, only to find out they didn't want your help. I'm sure even you must have lost faith in humanity at that point.
+So, this is the Shadow that stalks Mementos... Is it the root of all human fear? A core desire of the id? A warning from the superego of Mementos? I suppose it could be many things, but in the end, this is all mere speculation.
+You're so naīve. Trying to be a good person only gets you taken advantage of. You'd be a perfect target for scammers.
+With this much attention on me, I need to constantly consider how the audience and media will interpret my words.
+Sometimes, calling an idiot an idiot is the kindest thing you can do.
+
+# P5R Thieves Den (Unused)
+Complain all you like, but this is who I am. I'm not going to change back.
+You should be more upfront about your feelings. Then again, I suppose you are who you are.
+How nostalgic... It makes me sick to remember that day. I can't believe I was so thoroughly tricked.
+Personas are part of your personality, correct? Why don't you try acting like someone you're not?
+
+# P5R Confidant
+I'm rather dextrous with my right hand. I can even use chopsticks with it. Frankly, I didn't expect you to see through it.
+I think you'd be an interesting influence on me. If you're so inclined, we could go out again sometime.
+As in, people I'd actively choose to see in my free time? If that's what you mean, then no, I suppose I don't have many.
+Interesting. It's a nice idea... I'd like to try a match where I don't have to hold anything back.
+If you ever manage to win against me using my right hand, then I will face you with everything I have. You have my word.
+
+As far as I'm concerned, anyone in my company must meet their standards of intelligence and attractiveness... If not, well, they take it to social media, denouncing and harassing the people in question. I wouldn't wish that on you. But you? I expect you'll pass muster easily.
+Well, I don't hate sweets, but I'm not exactly partial to them...
+Uh-oh. Looks like I've been spotted.
+A shame I don't have glasses like you. Maybe I would have been able to get out of this situation.
+Huh? Hey, what are you—!?
+I suppose I'd better learn to watch what I say around you.
+Is that so? Well, who else could make a peasant of the Detective Prince?
+Well, you saved me. I daresay such crude means would never have occurred to me...
+Haha... Are you familiar with the legal right of portrait? Or privacy, perhaps?
+Hello. It's a shame our discussion was interrupted today... I was rather enjoying having a breather with you.
+It was an interesting experience, but... I definitely don't want to go through that ordeal ever again. I saw firsthand what happens when I'm too careless with my words around you.
+...You have a twisted concept of "fun."
+Any interest in becoming my stunt double? You can dress up as me. You and I aren't terribly different in height. I'm sure my clothes would fit you.
+If we do this, it'll have to be carefully planned, of course. I'll be dictating everything, from hair to accessories.
+Nobody would notice the switch, I'm sure. We proved it today—most people can't see beyond the superficial.
+
+There's a place I'd like to show you. It's a bit of a hole-in-the-wall, but I'm fond of it. We should be able to relax there, at least. That incident last time won't happen again.
+There was a place I wanted to visit with you, but what do you think? It's a special place for me. I'm hoping you'll like it too...
+Work and obligation take me to quite a few restaurants and cafés, but this place is a little more special to me. I guess you could call it my go-to place.
+Though I have to say, I'm envious. You must be quite well-stocked on coffee and curry.
+Even my efforts in cooking class have been underwhelming. In particular, an attempt to fillet a fish went... poorly.
+I usually come here when I need some time to really think on my own. So chatting with you here is really quite refreshing.
+You know, you're the first person I've ever brought here... It's not like I was keeping it from anyone, but... I suppose it goes to show we do have some strange connection.
+Certainly the point of jazz is all those jam sessions. A sea of improvisation, both complex and organic... As each player incorporates their own flavors, a natural melody is born from the chaos.
+There's something about that strange, erratic synchronicity... It's a euphoria like when I manage to solve a case.
+Well! I'm glad I brought you along, then. I thought I'd have more luck if I brought someone who I know can keep up with me intellectually.
+Jazz is a deep and complex style. I'd love for us to sit down and really talk about it sometime.
+Ah, I should let you go... Somehow I always end up talking more than usual when it's with you.
+
+Ah, you noticed? Well, I'll need as much practice as I can get if I'm going to take you out.
+What, did I have that much of a scary look on my face?
+I had a toy gun like this when I was young, you know. All this reminded me of running around the house with it, playing hero...
+There are different kinds of heroes, of course. Different stances they define themselves by. For example, one may stick to the justice they believe in, even if others deny it. While another may simply do as others desire of them, seeking to be recognized and gratified as a hero.
+But if nobody else wants the justice they fight for, isn't that just blind self-righteousness?
+I suppose if you're fighting for a justice nobody really wants, then it's just blind self-righteousness in the end.
+Ah sorry, I suppose that was a strange tangent... Pardon me. Whenever I talk to you, I just can't help delving into these abstract topics...
+Goodness, I worked up a sweat playing that game. I must smell like the arcade now... I could use a shower. Why don't we call it a day?
+I suppose I've always been quick to grasp the fundamentals of anything... but that's also been a concern for me.
+There's this... constant pressure. Everyone expects me to be capable of anything, which is stressful in and of itself.
+Haha, you don't hold back, do you? And you're surprisingly competitive, too. I suppose if you're that worked up, it means you truly don't want to lose to me.
+I didn't know you had a side like that... I'll accept a rematch anytime.
+...Still, games are rather fun. It was quite a novel experience... Usually, I just read in my leisure time.
+Usually I really struggle with enjoying the same pastimes as my peers, but thanks to you, I had fun today.
+
+Of course, these days I'm the Detective Prince, but my family situation was... well, complicated.
+By the time I was old enough to realize it, my father was already gone. My mother was all I had.
+My mother worked at a nightclub. Whenever she had to bring a man home, she'd send me off to the local bathhouse.
+It's in the past. I have no reason to blame her either. The only one who deserves blame is my father. The worthless, degenerate excuse for a man who abandoned my mother. I wanted to force him to finally give her the apology he owes her. But... that's no longer possible.
+Sorry. I didn't mean for our conversation to get so depressing.
+Oh, I'm just getting warmed up. Don't go overheating, now. I wouldn't want you to collapse on my account.
+Oof... I think I feel a little lightheaded.
+Haha, I thought so. Your face is bright red, you know.
+I've never told anyone else about my family situation, either. I wonder why I told you? Curious indeed.
+Now that you mention it, maybe we are pretty similar deep down... We're both victims of the adults who unfairly impacted our lives.
+This probably isn't a conversation we should be having naked. Let's get dressed, shall we?
+You really do things at your own pace, don't you? I suppose that's one of our differences.
+But perhaps that's simply the strength not to be bothered by others' perceptions. In which case... I'm a little envious.
+...Though we could always see who changes faster. First to leave wins. Are you ready?
+Between the delicious coffee and the bath, I finally managed to relax. So... thank you.
+It's nice to spend the day as Goro Akechi for once, rather than the Detective Prince. You know?
+I don't know if it's because of the whole Prince image, but everyone seems to think I'm some brilliant prodigy. It's really nothing like that. But people always seem to misunderstand.
+If they saw how I was acting today, perhaps they'd say I wasn't acting like the Detective Prince.
+But I suppose you're the only one who sees that side of me. Nobody else particularly needs to, anyway.
+Haha... I suppose there's a certain appeal to that gap, isn't there?
+Oh, I didn't mean for that to sound negative... I'm sorry if I offended. If anything, I envy you. You fit right in with the retro vibe back there.
+Honestly, though... I just can't figure you out, no matter how I try. You and I have common ground in some aspects, but in others, we're total opposites. It's intriguing. The more I get to know you, the more it makes me think. I wonder why that is.
+
+Even if I only have a little time, I'd like to spend it with you.
+And the most interesting part is that it has so many parallels to a theoretical "perfect crime".
+You eliminate your target without ever directly connecting yourself to it. I don't suppose that rings any bells?
+Everything that happens around us, every little inconsequential event, may simply be one ball striking another. But there's no guarantee that the ball can be precisely controlled.
+And despite the player's best intentions, the ball may strike many unrelated obstacles in its path. Even then... do you still intend to play this game?
+We are both victims of unjust adults. And now, we have the will and power to rise up against them.
+But even that united front will soon end. And after that, everything will return to the way it was, no?
+Why not join me instead...? All you'd have to do is abandon the teammates you have now.
+I'd advise you don't say these things without their due consideration. You shouldn't make promises that you can't keep, anyway.
+*chuckle* You truly are intriguing.
+I think a relationship of equals suits us better than being co-conspirators, anyway... No matter what else may change.
+In any case, what you just said carries great weight. Remember what you decided, and don't run from it. All right?
+Your competitive spirit definitely deserves praise. You really were terrible at first, but you caught up to me in no time... I have to ask—why do you get so competitive against me?
+Neither of us can afford to lose, because we fight in service of our principles. And that is precisely why... I cannot allow you to change. As you are now, as you think now... I cannot allow you to win over me.
+
+Remember what I told you? If you ever won against me using my right hand, I'd take you on with everything I've got.
+Your insight allowing you to determine my dominant hand, your quick wit, and most of all, how fast you've grown... You've exceeded my expectations in every way. Thus, I've built up this urge to duel you without holding anything back.
+You won't be able to defeat me unless you actually fight with lethal intent. Now, show me your true skills.
+Make sure that you come at me with the intent to kill me this time.
+It seems I've bested you—that is, if you were truly giving that fight your all.
+Honestly, that was disappointing. Was that truly the limit of your capabilities?
+...Maybe I've misjudged you all this time. I really wish you weren't such a disappointment to me...
+Anyway, I'll continue to wait in Shibuya from tomorrow on. If you want a rematch, I'll accept as many times as you please. That is, if you're up to the task.
+...If I'm to truly win, I want to defeat you at your full strength. So if you'd like a rematch, I will accept.
+In all honesty, I'd love to see just how far we can go...
+But, we have an important mission coming up. Until that's finished, you're a vital ally to me.
+As allies fighting alongside one another, your strength truly is reassuring. In all honesty, it's to the point that I'd be relying on you in a pinch.
+I'm going to be entirely honest with you: I hate you.
+Your deft handling of your unfortunate circumstances, your uniqueness, your ability to surpass me—all these irritate me. You're the one person I refuse to lose to.
+You really are— No, never mind.
+I'll let you have this win today, but next time, I will be victorious. Let this be my proof.
+There's a tradition in the West to throw one's glove at their opponent when demanding a duel. Should the opponent accept the glove, the duel is also accepted.
+Make certain that you will never forget: I am the one who will defeat you.
+
+# P5(R): Engine Room
+You truly are interesting... Quiet, yet possessing the courage and determination to take action.
+Under different circumstances, we could have been great rivals... or perhaps even friends.
+You don't allow yourself to be enslaved by such things as human relations or past selves... And so, your heart is always free. The exact opposite of mine. To be honest, I'm envious...
+I wonder why we couldn't have met a few years earlier, Ren...
+But... it's no use talking in hypotheticals. That didn't happen in reality...
+Joker... how could you be so successful while having such an idiot as your partner?
+All this is to make Masayoshi Shido... my father... acknowledge me. Then exact revenge on him.
+So I'm his bastard child. My very existence is nothing but a scandal... My mother's life turned for the worst after she had me... and died. I was a cursed child for her too.
+Who cares? My targets were all doing the same damn thing in this eat or be eaten world. All I did was remove their evil from society. How is that any different from the Phantom Thieves?
+Once he reaches the apex of his power and acknowledges me, I'm going to whisper in his ear... I will tell him the truth of who I really am! And that's when I—an utter disgrace to the world—will rule over him, I will prevail!
+In just a few weeks, my plan would have come to fruition... but no, you just had to interfere!
+Don't lecture me, you piece of shit...
+I am going to personally thrust Masayoshi Shido into a living hell.
+So, Joker... rest easy and die.
+
+Even the feeblest existence can gain tremendous power once the chains on its heart are broken.
+I didn't expect I'd be able to defeat you with those pawns. You have deceived me and escaped death, after all.
+I wouldn't give up my chance to massacre you with my own two hands...!
+*chuckle* So... neither of us had shown our true strengths, huh...?
+
+Teammates!? Friends!? To hell with that! Why am I inferior to you!? I was extremely particular about my life, my grades, my public image, so someone would want me around!
+I am an ace detective... A celebrity! But you... you're just some criminal trash living in an attic! So, how... How does someone like you have things I don't!? How can such a worthless piece of trash be more special than me!?
+Is that supposed to be pity? You piece of shit!
+Don't give me that cliché bullshit!
+This argument is meaningless!
+Ah... Just picturing it sends chills down my spine... What Shido thinks of me? Haha! I don't give a shit... All I care about now is killing you... to prove I'm better than you!
+You're not satisfied with where we left it either, are you? Isn't this what you really wanted? You and I are going to strike and strike until one of us is dead! To hell with holding back!
+...Friends? I don't need anyone like that!
+
+Don't make me laugh! Justice? Righteous?! Keep that shit to yourselves! You and your teammates piss me off!
+You're just... pieces of shit... who lick each other's wounds...!
+Why are you... looking at me like that...!? I've... I've succeeded until now... all by myself...! I don't need... teammates... I don't...
+
+...You're so lucky. Lucky to be surrounded... by teammates who acknowledge you.
+And once Shido confesses his crimes, you'll all be heroes. As for me, people will find out my past deductions were just charade. My fame and trust will vanish.
+In the end... I couldn't be special...
+...Are you all idiots? You should get rid of me... if you don't want me getting in your way.
+...You all are truly beyond my comprehension.
+
+Haha... I was such a fool.
+...Don't misunderstand. You're the one who's going to disappear!
+The real fools... are you guys. You should have just abandoned me here a long time ago...
+You would have all perished... if you had tried to face these with me weighing you down...
+Let's make a deal, okay? You won't say no, will you?
+Change Shido's heart... in my stead... End his crimes... Please!
+Heh... After all this, that's what you have to say? Seriously, you really are...
+So, my final enemy is a puppet version of myself... I...!
+
+# P5R: Third Semester
+>>>>>>> 266f10ee0268ed966c5dd6ab7008fcad16335b13
 We have greater concerns right now. In fact, I'm a bit offended you think so little of me that you expected me to be dead.
 For the time being, you seem to be the only one who's still in their right frame of mind.
 I should get to the point. ...Let's make a deal. What say we join forces on this?
